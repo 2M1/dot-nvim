@@ -4,7 +4,7 @@ lsp.preset("recommended")
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { 
+	ensure_installed = {
 		'lua_ls',
 		'rust_analyzer',
 		'clangd',
@@ -18,10 +18,10 @@ require("mason-lspconfig").setup({
 
 
 local cmp = require("cmp")
-local cmp_select = { behavior = cmp.SelectBehavior.Select } 
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select), 
+	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	['<C-y>'] = cmp.mapping.confirm({ select = false}),
 	['<C-Space>'] = cmp.mapping.complete(),
 })
@@ -34,11 +34,14 @@ cmp.setup({
 	mappings = cmp.mapping.preset.insert(cmp_mappings),
 })
 
-lsp.on_attach(function(client, bufnr) 
+lsp.on_attach(function(client, bufnr)
 
 	local opts = { buffer = bufnr, remap = false }
-	
+
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "<M-CR>", function () vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<C-h>", function () vim.lsp.buf.signature_help() end, opts)
+
 
 end)
 

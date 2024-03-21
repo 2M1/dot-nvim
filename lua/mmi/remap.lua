@@ -13,3 +13,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- unhighlight search:
 vim.keymap.set("n", "<leader>s", ":nohls")
+
+-- terminal:
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
