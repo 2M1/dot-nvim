@@ -16,3 +16,8 @@ vim.keymap.set("n", "<leader>s", ":nohls")
 
 -- terminal:
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+-- markdown (peek):
+
+vim.keymap.set("n", "<leader>po", function() require('peek').open() end, opts)
+vim.keymap.set("n", "<leader>pc", function() require('peek').close() end, opts)

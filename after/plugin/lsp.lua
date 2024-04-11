@@ -41,8 +41,7 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "<M-CR>", function () vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<C-h>", function () vim.lsp.buf.signature_help() end, opts)
-
+    vim.keymap.set("n", "<C-r>", function () vim.lsp.buf.rename() end, opts)
 
 end)
-
 lsp.setup()
