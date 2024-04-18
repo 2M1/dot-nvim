@@ -43,5 +43,6 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<C-h>", function () vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "<C-r>", function () vim.lsp.buf.rename() end, opts)
 
+    lsp.default_keymaps({buffer = bufnr})
 end)
 lsp.setup()

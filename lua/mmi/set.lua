@@ -17,3 +17,20 @@ vim.opt.termguicolors = true
 
 vim.opt.incsearch = true
 vim.opt.scrolloff = 8
+
+
+-- latex
+vim.g.vimtex_view_method = 'zathura'
+-- vim.g.vimtex_view_general_viewer = 'okular'
+-- vim.g.vimtex_view_general_options = "--unique file:@pdf#src:@line@tex"
+vim.g.tex_flavor = 'lualatex'
+vim.g.vimtex_compiler_latexmk = { options = {
+    "-shell-escape",
+    "-synctex=1",
+    '-interaction=nonstopmode',
+    '-file-line-error',
+    '-verbose',
+}}
+
+vim.opt.conceallevel=1
+vim.g.tex_conceal='abdmg'

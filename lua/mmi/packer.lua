@@ -50,4 +50,6 @@ return require('packer').startup(function(use)
         run = 'deno task --quiet build:fast'
     })
 
+    -- LaTeX
+    use( 'lervag/vimtex')
 end)
