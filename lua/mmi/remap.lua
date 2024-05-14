@@ -21,3 +21,5 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>po", function() require('peek').open() end, opts)
 vim.keymap.set("n", "<leader>pc", function() require('peek').close() end, opts)
+vim.keymap.set("n", "<localleader>po", function () vim.cmd('BrowserSyncOpen') end, opts)
+ 
