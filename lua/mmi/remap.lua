@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv",  vim.cmd.Ex)
+vim.g.maplocalleader = "\\"
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -17,9 +18,5 @@ vim.keymap.set("n", "<leader>s", ":nohls")
 -- terminal:
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
--- markdown (peek):
 
-vim.keymap.set("n", "<leader>po", function() require('peek').open() end, opts)
-vim.keymap.set("n", "<leader>pc", function() require('peek').close() end, opts)
-vim.keymap.set("n", "<localleader>po", function () vim.cmd('BrowserSyncOpen') end, opts)
- 
+vim.keymap.set("n", "<leader>po", function() vim.cmd('Telescope projects') end, opts)
