@@ -34,7 +34,11 @@ return require('packer').startup(function(use)
 
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
+
+    -- git integration:
     use('tpope/vim-fugitive')
+    use('lewis6991/gitsigns.nvim')
+
     use { 'mhartington/formatter.nvim' }
     use('mfussenegger/nvim-lint')
 
