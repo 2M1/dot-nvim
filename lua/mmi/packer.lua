@@ -68,8 +68,6 @@ return require('packer').startup(function(use)
     -- HTML/Browserpreviehtml
     use('tyru/open-browser.vim')
     use('tamago324/vim-browsersync')
-    use(
-        'windwp/nvim-ts-autotag'
-    )
-    use('Jezda1337/nvim-html-css')
+    use 'mattn/emmet-vim'
+    use 'windwp/nvim-ts-autotag'
 end)
