@@ -12,6 +12,10 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "yes"
 
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+
 vim.g.mapleader = " "
 vim.opt.termguicolors = true
 
@@ -38,3 +42,4 @@ vim.g.vimtex_compiler_latexmk = { options = {
 
 vim.opt.conceallevel=1
 vim.g.tex_conceal='abdmg'
+
