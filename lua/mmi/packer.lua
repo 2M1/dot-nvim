@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     use {
         "ahmedkhalf/project.nvim",
-        config = function() 
+        config = function()
             require("project_nvim").setup {
                 show_hidden = true,
             }
@@ -39,6 +39,16 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     use('lewis6991/gitsigns.nvim')
 
+    -- snippets:
+    use({
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
+    use { 'saadparwaiz1/cmp_luasnip' }
+
     use { 'mhartington/formatter.nvim' }
     use('mfussenegger/nvim-lint')
 
@@ -53,7 +63,10 @@ return require('packer').startup(function(use)
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/nvim-cmp', sources = {
+                { name = 'luasnip' },
+            }
+            },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
         }
