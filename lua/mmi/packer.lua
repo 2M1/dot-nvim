@@ -72,6 +72,11 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- github copilot:
+    use { 'github/copilot.vim', config = function()
+        require('copilot').setup()
+    end }
+
     -- markdown preview:
     use(
         "toppair/peek.nvim",

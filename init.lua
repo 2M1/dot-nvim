@@ -1,2 +1,3 @@
-require("mmi")
+vim.loader.enable()
 
+require("mmi")
