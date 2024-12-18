@@ -35,6 +35,14 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
 
+    -- UI:
+    use 'MunifTanjim/nui.nvim'
+
+    -- Debug adapter:
+    use { "rcarriga/nvim-dap-ui",
+        requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} 
+    }
+
     -- git integration:
     use('tpope/vim-fugitive')
     use('lewis6991/gitsigns.nvim')
@@ -73,16 +81,26 @@ return require('packer').startup(function(use)
     }
 
     -- github copilot:
-    use { 'github/copilot.vim', config = function()
-        require('copilot').setup()
-    end }
+--     use { 'github/copilot.vim', config = function()
+--         require('copilot').setup()
+--     end }
 
     -- markdown preview:
+    use("OXY2DEV/markview.nvim")
     use(
         "toppair/peek.nvim",
         {
             run = 'deno task --quiet build:fast'
         })
+
+    -- Swift & iOS
+    use {
+        'wojciech-kulik/xcodebuild.nvim',
+        config = function ()
+            require("xcodebuild").setup({
+            })
+        end
+    }
 
     -- LaTeX
     use('lervag/vimtex')
