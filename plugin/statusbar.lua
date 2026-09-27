@@ -17,9 +17,9 @@ local function git_branch()
 	-- end
 	-- return ""
     if not vim.b.gitsigns_head then
-        return " not a repo "
+        return "not a repo"
     end
-    return " \u{e725} " .. vim.b.gitsigns_head
+    return "\u{e725} " .. vim.b.gitsigns_head
 end
 
 local function file_type()
@@ -63,13 +63,16 @@ local function file_type()
 		vue = "\u{fd42} ", -- nf-md-vuejs
 		svelte = "\u{e697} ",
 		astro = "\u{e628} ",
-        tex = "\u{e69b} ",
+        LaTeX = "\u{e69b} ",
         bib = "\u{eb9c} ",
 	}
 
 	if ft == "" then
 		return " \u{f15b} " -- nf-fa-file_o
 	end
+    if ft == "tex" then
+        ft = "LaTeX"
+    end
 
 	return ((icons[ft] or " \u{f15b} ") .. ft)
 end
@@ -135,11 +138,11 @@ local function setup_dynamic_statusline()
 				"%#StatusLineBold#",
 				"%{v:lua.mode_icon()}",
 				"%#StatusLine#",
-				" \u{e0b1} %f %h%m%r", -- nf-pl-left_hard_divider
+				" \u{e0b1} %f", -- nf-pl-left_hard_divider
                 " \u{e0b1} ",
-				"%{v:lua.git_branch()}",
+				" %{v:lua.git_branch()} ",
 				"\u{e0b1} ", -- nf-pl-left_hard_divider
-				"%{v:lua.file_type()}",
+				"%{v:lua.file_type()} ",
 				"\u{e0b1} ", -- nf-pl-left_hard_divider
 				"%{v:lua.file_size()}",
 				"%=", -- Right-align everything after this

@@ -1,8 +1,10 @@
+require("mmi")
+
 vim.opt.termguicolors = true
 vim.cmd.colorscheme("onedark")
 
 
--- linenumbers
+-- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
@@ -23,9 +25,9 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
--- undohistory
+-- undo history
 local undodir = vim.fn.expand(os.getenv("HOME") .. "/.vim/undodir")
-if vim.fn.isdirectory(undodir) == 0 
+if vim.fn.isdirectory(undodir) == 0
 then
     vim.fn.mkdir(undodir, "p")
 end
@@ -40,7 +42,7 @@ vim.opt.updatetime = 300
 vim.opt.timeoutlen = 500
 vim.opt.ttimeoutlen = 0
 
--- autoreload on file changes
+-- auto reload on file changes
 vim.opt.autoread = true
 vim.opt.autowrite = false
 
@@ -72,3 +74,4 @@ vim.opt.lazyredraw = true
 -- left side column
 vim.opt.colorcolumn = "100"
 vim.opt.signcolumn = "yes"
+

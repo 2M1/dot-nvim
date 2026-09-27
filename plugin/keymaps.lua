@@ -44,7 +44,7 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 -- unhighlight search:
-vim.keymap.set("n", "<leader>c", ":nohls")
+vim.keymap.set("n", "<leader>c", ":nohls<CR>")
 
 -- spelling
 vim.keymap.set("n", "<leader>l", function()
@@ -78,10 +78,10 @@ vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "move to next buffer" }
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "move to previous buffer" })
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "split windows vertically" })
 vim.keymap.set("n", "<leader>sh", ":hsplit<CR>", { desc = "split window horizontally" })
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
-vim.keymap.set("n", "<C-Right>", ":vertical resize 2<CR>", { desc = "Increase window width" })
-vim.keymap.set("n", "<C-Left>", ":resize -2<CR>", { desc = "Decrease window height" })
-vim.keymap.set("n", "<C-Left>", ":resize 2<CR>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-S-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-S-Right>", ":vertical resize 2<CR>", { desc = "Increase window width" })
+vim.keymap.set("n", "<C-S-Up>", ":resize -2<CR>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-S-Down>", ":resize 2<CR>", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 

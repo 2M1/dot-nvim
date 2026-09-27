@@ -1,5 +1,3 @@
-
-
 if jit.os == "OSX" then
     vim.g.vimtex_view_method = "skim"
 else
